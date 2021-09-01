@@ -1,0 +1,22 @@
+
+/* Course */
+.courses{
+    overflow-y: scroll;
+    height: 180px;
+}
+
+.students .btn-group .btn,
+.groups .btn-group .btn{
+    border-left: 1px solid gray;
+}
+
+.students .btn-group .btn:first-child,
+.groups .btn-group .btn:first-child{
+    border-left: none;
+}
+
+.div-student-payments {
+    overflow-y: scroll !important;
+    height: 266px;
+}
+
