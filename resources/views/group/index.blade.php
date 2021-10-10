@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('style')
-    <link rel="stylesheet" href="{{ asset('css/multi-select.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-multiselect.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/multi-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/bootstrap-multiselect.css') }}">
 @endsection
 
 @section('content')
@@ -61,32 +61,32 @@
                                 <td class="text-right">
                                     <div class="dropdown d-inline-block">
                                         <svg class="c-icon c-icon-lg" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-options') }}"></use>
+                                            <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-options') }}"></use>
                                         </svg>
                                         <div class="dropdown-menu pt-0 pb-0" aria-labelledby="dropdownMenuButton">
                                             <a href="" class="dropdown-item js_edit_btn" data-toggle="modal" data-target="#showStudent{{ $g['id'] }}">
                                                 <svg class="c-icon c-icon-md mr-2">
-                                                    <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-people') }}"></use>
+                                                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-people') }}"></use>
                                                 </svg> O'quvchilar
                                             </a>
 
                                             @if(Request::segment(2) == '1' || Request::segment(2) == '2')
                                                 <a href="" class="dropdown-item js_edit_btn" data-toggle="modal" data-target="#addStudent{{ $g['id'] }}">
                                                     <svg class="c-icon c-icon-md mr-2">
-                                                        <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-user-follow') }}"></use>
+                                                        <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-user-follow') }}"></use>
                                                     </svg> Student qo'shish
                                                 </a>
                                             @endif
 
                                             <a href="" class="dropdown-item js_edit_btn" data-toggle="modal" data-target="#edit{{ $g['id'] }}">
                                                 <svg class="c-icon c-icon-md mr-2">
-                                                    <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-color-border') }}"></use>
+                                                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-color-border') }}"></use>
                                                 </svg> Tahrirlash
                                             </a>
 
                                             <button type="button" data-url="{{ route('group.destroy', [$g['id']]) }}" data-name="{{ $g['name'] }}" class="dropdown-item js_delete_btn" title="O'chirish" data-toggle="modal" data-target="#delete_notify">
                                                 <svg class="c-icon c-icon-md mr-2">
-                                                    <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-trash') }}"></use>
+                                                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-trash') }}"></use>
                                                 </svg> O'chirish
                                             </button>
                                         </div>
@@ -113,8 +113,8 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/jquery.multi-select.js') }}"></script>
-    <script src="{{ asset('js/bootstrap-multiselect.js') }}"></script>
+    <script src="{{ asset('public/js/jquery.multi-select.js') }}"></script>
+    <script src="{{ asset('public/js/bootstrap-multiselect.js') }}"></script>
     <script>
         $(document).ready(function () {
 

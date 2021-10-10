@@ -32,18 +32,18 @@
                                 <td class="text-right">
                                     <div class="dropdown d-inline-block">
                                         <svg class="c-icon c-icon-lg" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-options') }}"></use>
+                                            <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-options') }}"></use>
                                         </svg>
                                         <div class="dropdown-menu pt-0 pb-0" aria-labelledby="dropdownMenuButton">
 
                                             <a href="" class="dropdown-item js_edit_btn btn-sm" title="Тахрирлаш" data-toggle="modal" data-target="#edit{{ $cor->id }}">
                                                 <svg class="c-icon c-icon-md mr-2">
-                                                    <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-color-border') }}"></use>
+                                                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-color-border') }}"></use>
                                                 </svg> Tahrirlash
                                             </a>
                                             <button type="button" data-url="{{ route('course.destroy', [$cor->id]) }}" data-name="{{ $cor->name }}" class="dropdown-item js_delete_btn btn-sm" title="O'chirish" data-toggle="modal" data-target="#delete_notify">
                                                 <svg class="c-icon c-icon-md mr-2" title="O'chirish">
-                                                    <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-trash') }}"></use>
+                                                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-trash') }}"></use>
                                                 </svg> O'chirish
                                             </button>
                                         </div>
@@ -63,5 +63,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/functionCourse.js') }}"></script>
+    <script src="{{ asset('public/js/functionCourse.js') }}"></script>
 @endsection

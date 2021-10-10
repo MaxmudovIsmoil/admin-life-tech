@@ -71,26 +71,26 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 mt-2">
+                        <div class="col-md-12 mt-2">
                             <label for="company{{ $t['id'] }}">Oldingi lavozimi</label>
                             <input type="text" class="form-control" name="company" id="company{{ $t['id'] }}" value="{{ $t['company'] }}" />
                             <div class="valid-feedback text-danger company_error">Ma'lumotni kiriting!</div>
                         </div>
-                        <div class="col-md-6 mt-2">
-                            <label for="username{{ $t['id'] }}">Login</label>
-                            <input type="text" class="form-control" name="username" id="username{{ $t['id'] }}" value="{{ $t['username'] }}" readonly>
-                            <span class="valid-feedback text-danger username_error">Loginni kiriting!</span>
-                        </div>
-                        <div class="col-md-6 mt-2">
-                            <label for="password{{ $t['id'] }}">Parol</label>
-                            <input type="password" class="form-control" name="password" id="password{{ $t['id'] }}">
-                            <div class="valid-feedback text-danger password_error">Parolni kiriting!</div>
-                        </div>
-                        <div class="col-md-6 mt-2">
-                            <label for="password_confirm{{ $t['id'] }}">Parolni tasdiqlang</label>
-                            <input type="password" class="form-control" name="password_confirm" id="password_confirm{{ $t['id'] }}">
-                            <div class="valid-feedback text-danger password_confirm_error">Parolni tasdiqlang!</div>
-                        </div>
+{{--                        <div class="col-md-6 mt-2">--}}
+{{--                            <label for="username{{ $t['id'] }}">Login</label>--}}
+{{--                            <input type="text" class="form-control" name="username" id="username{{ $t['id'] }}" value="{{ $t['username'] }}" readonly>--}}
+{{--                            <span class="valid-feedback text-danger username_error">Loginni kiriting!</span>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-md-6 mt-2">--}}
+{{--                            <label for="password{{ $t['id'] }}">Parol</label>--}}
+{{--                            <input type="password" class="form-control" name="password" id="password{{ $t['id'] }}">--}}
+{{--                            <div class="valid-feedback text-danger password_error">Parolni kiriting!</div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-md-6 mt-2">--}}
+{{--                            <label for="password_confirm{{ $t['id'] }}">Parolni tasdiqlang</label>--}}
+{{--                            <input type="password" class="form-control" name="password_confirm" id="password_confirm{{ $t['id'] }}">--}}
+{{--                            <div class="valid-feedback text-danger password_confirm_error">Parolni tasdiqlang!</div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
                 <div class="modal-footer mt-3 pb-0">

@@ -6,62 +6,60 @@
         <div class="col-sm-12">
             <div class="card students">
                 <div class="btn-group btn-square">
-                    <a href="{{ route('teacher.index') }}"  class="btn btn-square btn-primary">O'qituvchilar</a>
-                    <a href="{{ route('teacher.staff') }}"  class="btn btn-square btn-secondary">Boshqa hodimlar</a>
+                    <a href="{{ route('teacher.index') }}"  class="btn btn-square btn-secondary">O'qituvchilar</a>
+                    <a href="{{ route('teacher.staff') }}"  class="btn btn-square btn-primary">Boshqa hodimlar</a>
                 </div>
                 <div class="card-body" style="position: relative;">
                     <a href="" class="btn btn-square btn-primary" data-toggle="modal" data-target="#add-model" style="position: absolute; z-index: 1;">Qo'shish</a>
 
                     {{-- Add Modal--}}
-                    @include('teacher.addModal')
+                    @include('teacher.addStaffModal')
 
                     <table id="datatableTeacher" class="display bg-info" style="width:100%;">
                         <thead>
-                            <tr>
-                                <th width="6%">№</th>
-{{--                                <th>Login</th>--}}
-                                <th>Ism</th>
-                                <th>Familiya</th>
-                                <th>Mutaxasisligi</th>
-                                <th>Telefon</th>
-                                <th>OYLIK (%)</th>
-                                <th width="15%" class="text-right">Harakatlar</th>
-                            </tr>
+                        <tr>
+                            <th width="6%">№</th>
+                            <th>Ism</th>
+                            <th>Familiya</th>
+                            <th>Mutaxasisligi</th>
+                            <th>Telefon</th>
+                            <th>Oylik</th>
+                            <th width="15%" class="text-right">Harakatlar</th>
+                        </tr>
                         </thead>
                         <tbody>
 
-                        @foreach($teachers as $t)
-                            <tr class="js_this_tr" data-id="{{ $t['id'] }}">
+                        @foreach($user_staff as $us)
+                            <tr class="js_this_tr" data-id="{{ $us->id }}">
                                 <td class="text-center">{{ ++$loop->index }}</td>
-{{--                                <td>{{ $t['username'] }}</td>--}}
-                                <td>{{ $t['firstname'] }}</td>
-                                <td>{{ $t['lastname'] }}</td>
+                                <td>{{ $us->firstname }}</td>
+                                <td>{{ $us->lastname }}</td>
+                                <td>{{ $us->name }}</td>
+                                <td>{{ substr($us->phone, 4) }}</td>
                                 <td>
-                                    @foreach($course as $k => $c)
-                                        @if(in_array($c->id, $t['course_ids']))
-                                            {{  $c->name }}<br>
-                                        @endif
-                                    @endforeach
+                                    @if($us->stype == 1)
+                                        {{ number_format($us->salary, 0, ",", " ") }} so'm
+                                    @else
+                                        {{ number_format($us->salary, 0, ",", " ") }}
+                                    @endif
                                 </td>
-                                <td>{{ substr($t['phone'], 4) }}</td>
-                                <td class="text-center">{{ 40 }}</td>
                                 <td class="text-right">
                                     <div class="dropdown d-inline-block">
                                         <svg class="c-icon c-icon-lg" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-options') }}"></use>
                                         </svg>
                                         <div class="dropdown-menu pt-0 pb-0" aria-labelledby="dropdownMenuButton">
-                                            <a href="{{ route('student.show', [$t['id']]) }}" class="dropdown-item js_show_student" data-toggle="modal" data-target="#show{{ $t['id'] }}">
+                                            <a href="{{ route('student.show', [$us->id]) }}" class="dropdown-item js_show_student" data-toggle="modal" data-target="#show{{ $us->id }}">
                                                 <svg class="c-icon c-icon-md mr-2">
                                                     <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-low-vision') }}"></use>
                                                 </svg> To'liq ko'rish
                                             </a>
-                                            <a href="" class="dropdown-item js_edit_btn" data-toggle="modal" data-target="#edit{{ $t['id'] }}">
+                                            <a href="" class="dropdown-item js_edit_btn" data-toggle="modal" data-target="#edit{{ $us->id }}">
                                                 <svg class="c-icon c-icon-md mr-2">
                                                     <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-color-border') }}"></use>
                                                 </svg> Tahrirlash
                                             </a>
-                                            <button type="button" data-url="{{ route('teacher.destroy', [$t['id']]) }}" data-name="{{ $t['firstname'] }}" class="dropdown-item js_delete_btn" title="O'chirish" data-toggle="modal" data-target="#delete_notify">
+                                            <button type="button" data-url="{{ route('teacher.destroy', [$us->id]) }}" data-name="{{ $us->firstname }}" class="dropdown-item js_delete_btn" title="O'chirish" data-toggle="modal" data-target="#delete_notify">
                                                 <svg class="c-icon c-icon-lg">
                                                     <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-trash') }}"></use>
                                                 </svg> O'chirish
@@ -70,9 +68,9 @@
                                     </div>
 
                                     {{-- Show Modal--}}
-                                    @include('teacher.showModal')
+{{--                                    @include('teacher.showModal')--}}
                                     {{-- Edit Modal--}}
-                                    @include('teacher.editModal')
+{{--                                    @include('teacher.editModal')--}}
 
                                 </td>
                             </tr>

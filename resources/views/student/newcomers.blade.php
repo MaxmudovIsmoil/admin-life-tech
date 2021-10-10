@@ -45,7 +45,7 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
+    <script src="{{ asset('public/js/jquery.maskedinput.min.js') }}"></script>
     <script>
         function inArray(needle, haystack) {
             var length = haystack.length;
@@ -290,6 +290,6 @@
 
         });
     </script>
-    <script src="{{ asset('js/functionStudent.js') }}"></script>
+    <script src="{{ asset('public/js/functionStudent.js') }}"></script>
 
 @endsection

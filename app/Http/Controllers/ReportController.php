@@ -25,7 +25,8 @@ class ReportController extends Controller
 //
 //        $i = 1;
 
-        return view('report.index');
+        $response = 1;
+        return view('report.index', compact('response'));
     }
 
 
@@ -46,8 +47,6 @@ class ReportController extends Controller
 
         if ($validation) {
             try {
-
-
 
                 return view('report.index', compact('title', 'costs'));
             } catch (\Exception $exception) {

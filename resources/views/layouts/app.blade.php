@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Life Tech</title>
     <link rel="icon" href="{{ asset('logo.svg') }}" type="image/icon type">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('icons-css/all.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/form-validation.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/icons-css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/form-validation.css') }}">
     @yield('style')
-    <link rel="stylesheet" href="{{ asset('css/datatable.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/datatable.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/css/main.css') }}">
     <style>
         .active {
             color: #fff !important;
@@ -41,7 +41,7 @@
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link @if(Request::segment(1) == 'admin') active @endif" href="{{ route('admin') }}">
                 <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('icons/sprites/free.svg#cil-home') }}"></use>
+                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-home') }}"></use>
                 </svg>
                 Bosh sahifa
             </a>
@@ -49,7 +49,7 @@
         <li class="c-sidebar-nav-item @if(Request::segment(1) == 'course') active @endif">
             <a class="c-sidebar-nav-link" href="{{ route('course.index') }}">
                 <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('icons/sprites/free.svg#cil-layers') }}"></use>
+                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-layers') }}"></use>
                 </svg>
                 Kurslar
             </a>
@@ -57,15 +57,15 @@
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link @if(Request::segment(1) == 'teacher') active @endif" href="{{ route('teacher.index') }}">
                 <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('icons/sprites/free.svg#cil-user') }}"></use>
+                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-user') }}"></use>
                 </svg>
-                O'qituvchilar
+                Hodimlar
             </a>
         </li>
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link @if(Request::segment(1) == 'student') active @endif" href="{{ route('student.newcomers') }}">
                 <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('icons/sprites/free.svg#cil-people') }}"></use>
+                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-people') }}"></use>
                 </svg>
                 O'quvchilar
             </a>
@@ -73,7 +73,7 @@
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link @if(Request::segment(1) == 'group') active @endif" href="{{ route('group.index',[1]) }}">
                 <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('icons/sprites/free.svg#cil-library') }}"></use>
+                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-library') }}"></use>
                 </svg>
                 Guruhlar
             </a>
@@ -81,7 +81,7 @@
         <li class="c-sidebar-nav-item c-sidebar-nav-dropdown @if(Request::segment(1) == 'expense') c-show @endif" href="#">
             <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
                 <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('icons/sprites/free.svg#cil-money') }}"></use>
+                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-money') }}"></use>
                 </svg> Harajatlar
             </a>
             <ul class="c-sidebar-nav-dropdown-items">
@@ -101,7 +101,7 @@
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link @if(Request::segment(1) == 'report') active @endif" href="{{ route('report.index') }}">
                 <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('icons/sprites/free.svg#cil-bar-chart') }}"></use>
+                    <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-bar-chart') }}"></use>
                 </svg>
                 Hisobot
             </a>
@@ -116,18 +116,18 @@
         <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar"
                 data-class="c-sidebar-show">
             <svg class="c-icon c-icon-lg">
-                <use xlink:href="{{ asset('icons/sprites/free.svg#cil-menu') }}"></use>
+                <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-menu') }}"></use>
             </svg>
         </button>
         <a class="c-header-brand d-lg-none" href="#">
             <svg width="118" height="46" alt="CoreUI Logo">
-                <use xlink:href="{{ asset('icons/sprites/free.svg#full') }}"></use>
+                <use xlink:href="{{ asset('public/icons/sprites/free.svg#full') }}"></use>
             </svg>
         </a>
         <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar"
                 data-class="c-sidebar-lg-show" responsive="true">
             <svg class="c-icon c-icon-lg">
-                <use xlink:href="{{ asset('icons/sprites/free.svg#cil-menu') }}"></use>
+                <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-menu') }}"></use>
             </svg>
         </button>
         <ul class="c-header-nav d-md-down-none">
@@ -138,17 +138,17 @@
         <ul class="c-header-nav ml-auto mr-4">
             <li class="c-header-nav-item d-md-down-none mx-2"><a class="c-header-nav-link" href="#">
                     <svg class="c-icon">
-                        <use xlink:href="{{ asset('icons/sprites/free.svg#cil-bell')  }}"></use>
+                        <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-bell')  }}"></use>
                     </svg>
                 </a></li>
             <li class="c-header-nav-item d-md-down-none mx-2"><a class="c-header-nav-link" href="#">
                     <svg class="c-icon">
-                        <use xlink:href="{{ asset('icons/sprites/free.svg#cil-list-rich') }}"></use>
+                        <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-list-rich') }}"></use>
                     </svg>
                 </a></li>
             <li class="c-header-nav-item d-md-down-none mx-2"><a class="c-header-nav-link" href="#">
                     <svg class="c-icon">
-                        <use xlink:href="{{ asset('icons/sprites/free.svg#cil-envelope-open') }}"></use>
+                        <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-envelope-open') }}"></use>
                     </svg>
                 </a></li>
             <li class="c-header-nav-item dropdown">
@@ -156,18 +156,17 @@
                     <div class="c-avatar">User</div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right pt-0 pb-0">
-                    <!--                     <div class="dropdown-header bg-light py-2"><strong>Account</strong></div> -->
 
                     <a class="dropdown-item" href="#">
                         <svg class="c-icon mr-2">
-                            <use xlink:href="{{ asset('icons/sprites/free.svg#cil-settings') }}"></use>
+                            <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-settings') }}"></use>
                         </svg>
                         Password update
                     </a>
                     <a href="{{ route('logout') }}" class="dropdown-item"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <svg class="c-icon mr-2">
-                            <use xlink:href="{{ asset('icons/sprites/free.svg#cil-account-logout') }}"></use>
+                            <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-account-logout') }}"></use>
                         </svg>
                         Logout
                     </a>
@@ -192,23 +191,23 @@
 @include('layouts.deleteModal')
 
 
-<script src="{{ asset('js/jQurey.js') }}"></script>
-<script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
+<script src="{{ asset('public/js/jQurey.js') }}"></script>
+<script src="{{ asset('public/js/coreui.bundle.min.js') }}"></script>
 <!--[if IE]><!-->
-<script src="{{ asset('js/svgxuse.min.js') }}"></script>
+<script src="{{ asset('public/js/svgxuse.min.js') }}"></script>
 <!--<![endif]-->
 
-<script src="{{ asset('js/coreui-chartjs.bundle.js') }}"></script>
-<script src="{{ asset('js/coreui-utils.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
-<script src="{{ asset('js/datatable.js') }}"></script>
+<script src="{{ asset('public/js/coreui-chartjs.bundle.js') }}"></script>
+<script src="{{ asset('public/js/coreui-utils.js') }}"></script>
+<script src="{{ asset('public/js/main.js') }}"></script>
+<script src="{{ asset('public/js/datatable.js') }}"></script>
 
 {{-- number format --}}
-<script src="{{ asset('js/numeral.js') }}"></script>
-<script src="{{ asset('js/form-validation.js') }}"></script>
+<script src="{{ asset('public/js/numeral.js') }}"></script>
+<script src="{{ asset('public/js/form-validation.js') }}"></script>
 
-<script src="{{ asset('js/functionDelete.js') }}"></script>
-<script src="{{ asset('js/functions.js') }}"></script>
+<script src="{{ asset('public/js/functionDelete.js') }}"></script>
+<script src="{{ asset('public/js/functions.js') }}"></script>
 
 @yield('script')
 

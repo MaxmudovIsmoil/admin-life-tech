@@ -19,9 +19,9 @@ class TeacherController extends Controller
     public function index()
     {
         $teacher = DB::table('users')->where('utype','teacher')->get();
-        $i = 1;
 
         $course = Course::all();
+
 
         $teachers = array();
         foreach($teacher as $k => $t) {
@@ -41,7 +41,7 @@ class TeacherController extends Controller
             $teachers[$k]['course_ids'] = explode(';', $t->course_ids);
         }
 
-        return view('teacher.index', compact('teachers', 'course', 'i'));
+        return view('teacher.index', compact('teachers', 'course'));
     }
 
     /**
@@ -81,8 +81,8 @@ class TeacherController extends Controller
 
             try {
                 User::create([
-                    'username'  => $request->username,
-                    'password'  => Hash::make($request->password),
+                    'username'  => "teacher".time(),
+                    'password'  => Hash::make(123456),
                     'token'     => $request->_token,
                     'firstname' => $request->firstname,
                     'lastname'  => $request->lastname,
@@ -157,8 +157,8 @@ class TeacherController extends Controller
                 'address'   => 'required',
                 'born'      => 'required',
                 'company'   => 'required',
-                'password'  => ['required', 'min:5'],
-                'password_confirm' => ['required_with:password', 'same:password', 'min:5'],
+//                'password'  => ['required', 'min:5'],
+//                'password_confirm' => ['required_with:password', 'same:password', 'min:5'],
             ]);
 
             if ($validation->fails()) {
@@ -171,7 +171,7 @@ class TeacherController extends Controller
                 try {
                     $studentsOnce = User::findOrFail($id);
                     $studentsOnce->fill([
-                        'password'  => isset($request->password) ? Hash::make($request->password) : null,
+//                        'password'  => isset($request->password) ? Hash::make($request->password) : null,
                         'firstname' => $request->firstname,
                         'lastname'  => $request->lastname,
                         'phone'     => "+998".$request->phone,
@@ -249,9 +249,9 @@ class TeacherController extends Controller
             'address'   => 'required',
             'born'      => 'required',
             'company'   => 'required',
-            'username'  => ['required', 'unique:users'],
-            'password'  => ['required', 'min:5'],
-            'password_confirm' => ['required_with:password', 'same:password', 'min:5'],
+//            'username'  => ['required', 'unique:users'],
+//            'password'  => ['required', 'min:5'],
+//            'password_confirm' => ['required_with:password', 'same:password', 'min:5'],
         ];
     }
 
@@ -268,5 +268,19 @@ class TeacherController extends Controller
         $u->delete();
 
         return response()->json(['id' => $id]);
+    }
+
+    public function staff()
+    {
+
+        $user_staff = DB::table('user_staff As us')
+            ->select('u.*', 's.*', 'ss.salary', 'ss.type AS stype')
+            ->leftJoin('users AS u' ,'u.id', '=', 'us.user_id')
+            ->leftJoin('staff AS s' ,'s.id', '=', 'us.staff_id')
+            ->leftJoin('staff_salary AS ss' ,'ss.staff_id', '=', 'u.id')
+            ->get();
+
+
+        return view('teacher.staff', compact('user_staff'));
     }
 }

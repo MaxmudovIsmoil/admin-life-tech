@@ -60,7 +60,7 @@ class StudentController extends Controller
             $students[$k]['address'] = $s->address;
             $students[$k]['born'] = date('d.m.Y', strtotime($s->born));
             $students[$k]['status'] = $s->status;
-            $students[$k]['cause'] = $s->cause;
+            $students[$k]['cause'] = isset($s->cause) ? $s->cause : "";
             $students[$k]['gender'] = $s->gender;
             $students[$k]['company'] = $s->company;
             $students[$k]['advertising'] = $s->advertising;
@@ -104,22 +104,22 @@ class StudentController extends Controller
 
                 $btn = '<div class="dropdown d-inline-block">
                             <svg class="c-icon c-icon-lg" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <use xlink:href="'.url('/icons/sprites/free.svg#cil-options').'"></use>
+                                <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-options').'"></use>
                             </svg>
                             <div class="dropdown-menu pt-0 pb-0" aria-labelledby="dropdownMenuButton">
                                 <a href="'. route('student.getNewcomersStudyShow', [$s['id']]) .'" class="dropdown-item js_show_btn" data-toggle="modal" data-target="#showModal">
                                     <svg class="c-icon c-icon-md mr-2">
-                                        <use xlink:href="'. url('/icons/sprites/free.svg#cil-low-vision').'"></use>
+                                        <use xlink:href="'. asset('public/icons/sprites/free.svg#cil-low-vision').'"></use>
                                     </svg> To\'liq ko\'rish
                                 </a>
                                 <a href="'. route('student.getStudent', [$s['id']]) .'" data-action="'.route('student.update', [$s['id']]).'" class="dropdown-item js_edit_btn" data-toggle="modal" data-target="#editModal">
                                    <svg class="c-icon c-icon-md mr-2">
-                                       <use xlink:href="'.url('/icons/sprites/free.svg#cil-color-border').'"></use>
+                                       <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-color-border').'"></use>
                                    </svg> Tahrirlash
                                 </a>
                                 <button type="button" data-url="'.route('student.destroy', [$s['id']]).'" data-name="'.$s['firstname'].'" class="dropdown-item js_delete_btn" data-toggle="modal" data-target="#delete_notify">
                                     <svg class="c-icon c-icon-md mr-2">
-                                        <use xlink:href="'.url('/icons/sprites/free.svg#cil-trash').'"></use>
+                                        <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-trash').'"></use>
                                     </svg> O\'chirish
                                 </button>
                             </div>
@@ -169,7 +169,7 @@ class StudentController extends Controller
 
                 $btn = '<div class="dropdown d-inline-block">
                             <svg class="c-icon c-icon-lg" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <use xlink:href="'.url('/icons/sprites/free.svg#cil-options').'"></use>
+                                <use xlink:href="'.url('public/icons/sprites/free.svg#cil-options').'"></use>
                             </svg>
                             <div class="dropdown-menu pt-0 pb-0" aria-labelledby="dropdownMenuButton">
                                 <a href="'.route('studentPayment.student_payments_in_group').'"
@@ -178,22 +178,22 @@ class StudentController extends Controller
                                             data-full-name="'.$s['firstname'].' '.$s['lastname'].', '.$s['group'].'
                                             guruhiga " class="dropdown-item js_payment_btn">
                                     <svg class="c-icon c-icon-md mr-2">
-                                        <use xlink:href="'.url('/icons/sprites/free.svg#cil-dollar').'"></use>
+                                        <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-dollar').'"></use>
                                     </svg> To\'lovlar
                                 </a>
                                 <a href="'. route('student.getNewcomersStudyShow', [$s['id']]) .'" class="dropdown-item js_show_btn" data-toggle="modal" data-target="#showModal">
                                     <svg class="c-icon c-icon-md mr-2">
-                                        <use xlink:href="'. url('/icons/sprites/free.svg#cil-low-vision').'"></use>
+                                        <use xlink:href="'. asset('public/icons/sprites/free.svg#cil-low-vision').'"></use>
                                     </svg> To\'liq ko\'rish
                                 </a>
                                 <a href="'. route('student.getStudent', [$s['id']]) .'" data-action="'.route('student.update', [$s['id']]).'" class="dropdown-item js_edit_btn" data-toggle="modal" data-target="#editModal">
                                    <svg class="c-icon c-icon-md mr-2">
-                                       <use xlink:href="'.url('/icons/sprites/free.svg#cil-color-border').'"></use>
+                                       <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-color-border').'"></use>
                                    </svg> Tahrirlash
                                 </a>
                                 <button type="button" data-url="'.route('student.destroy', [$s['id']]).'" data-name="'.$s['firstname'].'" class="dropdown-item js_delete_btn" data-toggle="modal" data-target="#delete_notify">
                                     <svg class="c-icon c-icon-md mr-2">
-                                        <use xlink:href="'.url('/icons/sprites/free.svg#cil-trash').'"></use>
+                                        <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-trash').'"></use>
                                     </svg> O\'chirish
                                 </button>
                             </div>
@@ -281,22 +281,22 @@ class StudentController extends Controller
                             <div class="dropdown-menu pt-0 pb-0" aria-labelledby="dropdownMenuButton">
                                 <a href="#" class="dropdown-item js_payment_btn" data-toggle="modal" data-target="#paymentModal">
                                     <svg class="c-icon c-icon-md mr-2">
-                                        <use xlink:href="'.url('/icons/sprites/free.svg#cil-dollar').'"></use>
+                                        <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-dollar').'"></use>
                                     </svg> To\'lovlar
                                 </a>
                                 <a href="'. route('student.getGraduatedShow', [$s['id']]) .'" class="dropdown-item js_show_btn" data-toggle="modal" data-target="#showModal">
                                     <svg class="c-icon c-icon-md mr-2">
-                                        <use xlink:href="'. url('/icons/sprites/free.svg#cil-low-vision').'"></use>
+                                        <use xlink:href="'. asset('public/icons/sprites/free.svg#cil-low-vision').'"></use>
                                     </svg> To\'liq ko\'rish
                                 </a>
                                 <a href="'. route('student.getStudent', [$s['id']]) .'" data-action="'.route('student.update', [$s['id']]).'" class="dropdown-item js_edit_btn" data-toggle="modal" data-target="#editModal">
                                    <svg class="c-icon c-icon-md mr-2">
-                                       <use xlink:href="'.url('/icons/sprites/free.svg#cil-color-border').'"></use>
+                                       <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-color-border').'"></use>
                                    </svg> Tahrirlash
                                 </a>
                                 <button type="button" data-url="'.route('student.destroy', [$s['id']]).'" data-name="'.$s['firstname'].'" class="dropdown-item js_delete_btn" data-toggle="modal" data-target="#delete_notify">
                                     <svg class="c-icon c-icon-md mr-2">
-                                        <use xlink:href="'.url('/icons/sprites/free.svg#cil-trash').'"></use>
+                                        <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-trash').'"></use>
                                     </svg> O\'chirish
                                 </button>
                             </div>
@@ -380,22 +380,22 @@ class StudentController extends Controller
 
                 $btn = '<div class="dropdown d-inline-block">
                             <svg class="c-icon c-icon-lg" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <use xlink:href="'.url('/icons/sprites/free.svg#cil-options').'"></use>
+                                <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-options').'"></use>
                             </svg>
                             <div class="dropdown-menu pt-0 pb-0" aria-labelledby="dropdownMenuButton">
                                 <a href="'. route('student.getUneducatedShow', [$s['id']]) .'" class="dropdown-item js_show_btn" data-toggle="modal" data-target="#showModal">
                                     <svg class="c-icon c-icon-md mr-2">
-                                        <use xlink:href="'. url('/icons/sprites/free.svg#cil-low-vision').'"></use>
+                                        <use xlink:href="'. asset('public/icons/sprites/free.svg#cil-low-vision').'"></use>
                                     </svg> To\'liq ko\'rish
                                 </a>
                                 <a href="'. route('student.getStudent', [$s['id']]) .'" data-action="'.route('student.update', [$s['id']]).'" class="dropdown-item js_edit_btn" data-toggle="modal" data-target="#editModal">
                                    <svg class="c-icon c-icon-md mr-2">
-                                       <use xlink:href="'.url('/icons/sprites/free.svg#cil-color-border').'"></use>
+                                       <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-color-border').'"></use>
                                    </svg> Tahrirlash
                                 </a>
                                 <button type="button" data-url="'.route('student.destroy', [$s['id']]).'" data-name="'.$s['firstname'].'" class="dropdown-item js_delete_btn" data-toggle="modal" data-target="#delete_notify">
                                     <svg class="c-icon c-icon-md mr-2">
-                                        <use xlink:href="'.url('/icons/sprites/free.svg#cil-trash').'"></use>
+                                        <use xlink:href="'.asset('public/icons/sprites/free.svg#cil-trash').'"></use>
                                     </svg> O\'chirish
                                 </button>
                             </div>

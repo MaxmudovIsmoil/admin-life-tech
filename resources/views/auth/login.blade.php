@@ -11,7 +11,7 @@
                         <form action="{{ route('login') }}" method="POST">
                             <h1 class="text-center mb-3">{{ __('Kirish oynasi') }}</h1>
                             @error('username')
-                                <p class="p-0 mt-1 mb-1 text-center text-danger text-bold">{{'Login yoki parolda xatolik bor'}}</p>
+                                <p class="p-0 mt-1 mb-1 text-center text-danger font-weight-bold">{{'Login yoki parolda xatolik bor'}}</p>
                             @enderror
                             @csrf
 
@@ -20,7 +20,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <svg class="c-icon">
-                                                <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-user') }}"></use>
+                                                <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-user') }}"></use>
                                             </svg>
                                         </span>
                                     </div>
@@ -39,7 +39,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
                                             <svg class="c-icon">
-                                                <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-lock-locked') }}"></use>
+                                                <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-lock-locked') }}"></use>
                                             </svg>
                                         </span>
                                     </div>

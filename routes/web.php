@@ -64,6 +64,7 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::delete('/destroy/{id}', [TeacherController::class, 'destroy'])->name('teacher.destroy');
 
+        Route::get('/staff', [TeacherController::class, 'staff'])->name('teacher.staff');
     });
     /**###################################### ./TEACHER ##########################################**/
 

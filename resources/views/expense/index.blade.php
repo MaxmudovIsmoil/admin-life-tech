@@ -40,7 +40,7 @@
                                     <div class="btn-group js_btn_group" role="group" aria-label="Basic example">
                                         <a href="" class="js_edit_btn btn btn-info btn-square btn-sm" title="Тахрирлаш" data-toggle="modal" data-target="#edit{{ $exp->id }}">
                                             <svg class="c-icon c-icon-lg">
-                                                <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-color-border') }}"></use>
+                                                <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-color-border') }}"></use>
                                             </svg>
                                         </a>
                                         {{-- Edit Modal--}}
@@ -48,7 +48,7 @@
 
                                         <button type="button" data-url="{{ route('expense.destroy', [$exp->id]) }}" data-name="{{ $exp->name }}" class="btn btn-danger js_delete_btn btn-square btn-sm" title="O'chirish" data-toggle="modal" data-target="#delete_notify">
                                             <svg class="c-icon c-icon-lg" title="O'chirish">
-                                                <use xlink:href="{{ asset('/icons/sprites/free.svg#cil-trash') }}"></use>
+                                                <use xlink:href="{{ asset('public/icons/sprites/free.svg#cil-trash') }}"></use>
                                             </svg>
                                         </button>
                                     </div>

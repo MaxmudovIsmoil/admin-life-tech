@@ -64,7 +64,7 @@ class StudentPaymentController extends Controller
                 if ($now < $next_day) {
                     $btn = '<a href="'.route('studentPayment.payment_delete', [$p->payment_id]).'" style="color: darkred" class="js_payment_delete_btn">
                             <svg class="c-icon c-icon-md">
-                                <use xlink:href="' . url("/icons/sprites/free.svg#cil-trash") . '"></use>
+                                <use xlink:href="' . asset("public/icons/sprites/free.svg#cil-trash") . '"></use>
                             </svg>
                         </a>';
                     return $btn;
